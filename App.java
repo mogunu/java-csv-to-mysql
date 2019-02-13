@@ -17,7 +17,7 @@ import au.com.bytecode.opencsv.*;
 
 public class App {
 
-	public static final String csvFile = "C:\\data.csv";
+	public static final String csvFile = "/home/centos/data.csv";
 	
     public static void main(String[] args) {
 

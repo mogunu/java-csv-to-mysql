@@ -52,15 +52,7 @@ public class App {
 						+"'linenumber' ,"
 						+"'operation' ,"
 						+"'applicaion' ,"
-						+"'reportdate') 
-						/*+"`END_DT` ,"
-						+"`END_X` ,"
-						+"`END_Y` ,"
-						+"`DISTANCE` ,"
-						+"`AMOUNT_PAID` ,"
-						+"`JOB_NO` ,"
-						+"`VEHICLE_ID` ,"
-						+"`DRIVER_ID`)"*/
+						+"'reportdate') "
 						+"VALUES " + values + ";";
 					
 					st.executeUpdate(query);

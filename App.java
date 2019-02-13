@@ -30,7 +30,7 @@ public class App {
         String password = "password";
 		int count = 0;
 		int totalcount = 0;
-		String values = "(0,0,0,0,0,0,0,0,0,0,0,0)";
+		String values = "(0,0,0,0)";
 		String query = "";
         try {
 		

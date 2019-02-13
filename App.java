@@ -25,9 +25,9 @@ public class App {
         Statement st = null;
         ResultSet rs = null;
 
-        String url = "jdbc:mysql://127.0.0.1:3306/geospatial";
+        String url = "jdbc:mysql://127.0.0.1:3306/datafeed";
         String user = "root";
-        String password = "";
+        String password = "password";
 		int count = 0;
 		int totalcount = 0;
 		String values = "(0,0,0,0,0,0,0,0,0,0,0,0)";
@@ -43,29 +43,29 @@ public class App {
 			
 			while ((nextLine = reader.readNext()) != null) {
 				
-				values += ",('" + nextLine[0]+"','"+nextLine[1]+"','"+nextLine[2]+"','"+nextLine[3]+"','"+nextLine[4]+"','"+nextLine[5]+"','"+nextLine[6]+"','"+nextLine[7]+"','"+nextLine[8]+"','"+nextLine[9]+"','"+nextLine[10]+"','"+nextLine[11]+"')";
+				values += ",('" + nextLine[0]+"','"+nextLine[1]+"','"+nextLine[2]+"','"+nextLine[3]"')";
 				count++;
 				totalcount++;
 				
 				if (count == 100) {
-					query  = "INSERT INTO  `geospatial`.`rawdata` ("
-						+"`TRIP_NO` ,"
-						+"`START_DT` ,"
-						+"`START_X` ,"
-						+"`START_Y` ,"
-						+"`END_DT` ,"
+					query  = "INSERT INTO  'datafeed'.'raw_data' ("
+						+"'linenumber' ,"
+						+"'operation' ,"
+						+"'applicaion' ,"
+						+"'reportdate') 
+						/*+"`END_DT` ,"
 						+"`END_X` ,"
 						+"`END_Y` ,"
 						+"`DISTANCE` ,"
 						+"`AMOUNT_PAID` ,"
 						+"`JOB_NO` ,"
 						+"`VEHICLE_ID` ,"
-						+"`DRIVER_ID`)"
+						+"`DRIVER_ID`)"*/
 						+"VALUES " + values + ";";
 					
 					st.executeUpdate(query);
 					count = 0;
-					values = "(0,0,0,0,0,0,0,0,0,0,0,0)";
+					values = "(0,0,0,0)";
 				}
 			}
 			query  = "DELETE FROM `rawdata` WHERE `TRIP_NO` = '0'";

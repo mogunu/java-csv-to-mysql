@@ -43,7 +43,7 @@ public class App {
 			
 			while ((nextLine = reader.readNext()) != null) {
 				
-				values += ",('" + nextLine[0]+"','"+nextLine[1]+"','"+nextLine[2]+"','"+nextLine[3]"')";
+				values += ",('" + nextLine[0]+"','"+nextLine[1]+"','"+nextLine[2]+"','"+nextLine[3]+"')";
 				count++;
 				totalcount++;
 				
